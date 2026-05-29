@@ -18,17 +18,24 @@ interface Props {
  * Morphs scale, hue, ring count and wireframe opacity based on progress.
  */
 export function EcosystemOrb({ progress }: Props) {
-  // Vertical travel: stays roughly centered but drifts
-  const y = useTransform(progress, [0, 1], ["0vh", "12vh"]);
+  // 10 sections, each ~0.1 of scroll. Anchor orb to the empty side of each section.
+  // hero(L-text→R), infra(center), telecom(R-text→L), security(L→R), it(R→L),
+  // av(L→R), turnkey(center), clients(center), stats(center), cta(center)
   const x = useTransform(
     progress,
-    [0, 0.2, 0.4, 0.6, 0.8, 1],
-    ["0vw", "-8vw", "10vw", "-6vw", "8vw", "0vw"]
+    [0,    0.1,  0.2,  0.3,  0.4,  0.5,  0.6,  0.7,  0.85, 1],
+    ["22vw","0vw","-22vw","22vw","-22vw","22vw","0vw","0vw","0vw","0vw"]
   );
+  const y = useTransform(progress, [0, 1], ["0vh", "4vh"]);
   const scale = useTransform(
     progress,
-    [0, 0.15, 0.35, 0.55, 0.75, 0.95],
-    [1, 0.85, 0.95, 0.8, 0.9, 1.15]
+    [0, 0.1, 0.55, 0.7, 0.85, 1],
+    [0.85, 0.7, 0.7, 0.55, 0.6, 0.75]
+  );
+  const opacity = useTransform(
+    progress,
+    [0, 0.05, 0.65, 0.72, 1],
+    [1, 1, 1, 0.25, 0.2]
   );
   const hue = useTransform(progress, [0, 0.5, 1], [0, 25, -10]);
   const wireframe = useTransform(progress, [0.1, 0.3, 0.55, 0.8], [0, 1, 0.7, 1]);
@@ -36,10 +43,11 @@ export function EcosystemOrb({ progress }: Props) {
 
   return (
     <motion.div
-      style={{ y, x, scale, filter: useTransform(hue, (h) => `hue-rotate(${h}deg)`) }}
-      className="pointer-events-none fixed left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2"
+      style={{ y, x, scale, opacity, filter: useTransform(hue, (h) => `hue-rotate(${h}deg)`) }}
+      className="pointer-events-none fixed left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2"
     >
-      <div className="relative h-[78vmin] w-[78vmin] max-h-[720px] max-w-[720px]">
+      <div className="relative h-[60vmin] w-[60vmin] max-h-[560px] max-w-[560px]">
+
         {/* Outer glow */}
         <motion.div
           style={{ opacity: coreGlow }}
