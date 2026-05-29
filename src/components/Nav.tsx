@@ -20,15 +20,15 @@ export function Nav() {
       className="fixed top-0 left-0 right-0 z-50"
     >
       <div className="mx-auto mt-4 flex max-w-7xl items-center justify-between rounded-full glass px-5 py-3 md:px-7">
-        <a href="#top" className="flex items-center gap-2">
+        <a href="#top" className="flex items-center gap-2.5">
           <img
             src={tandonLogo}
             alt="Tandon Electronics"
-            width={1536}
-            height={1024}
-            className="h-8 w-auto md:h-9"
+            className="h-9 w-9 rounded-lg object-cover"
           />
+          <span className="font-display text-base font-semibold tracking-tight">Tandon Electronics</span>
         </a>
+
 
         <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
           {links.map((l) => (
