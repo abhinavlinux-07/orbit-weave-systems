@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import tandonLogo from "@/assets/tandon-logo.png";
+
 
 const links = [
   { label: "Infrastructure", href: "#infra" },
@@ -19,14 +21,15 @@ export function Nav() {
     >
       <div className="mx-auto mt-4 flex max-w-7xl items-center justify-between rounded-full glass px-5 py-3 md:px-7">
         <a href="#top" className="flex items-center gap-2">
-          <span
-            className="flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-white"
-            style={{ background: "linear-gradient(135deg, var(--brand-deep), var(--brand-accent))" }}
-          >
-            T
-          </span>
-          <span className="font-display text-base font-semibold tracking-tight">Tandon</span>
+          <img
+            src={tandonLogo}
+            alt="Tandon Electronics"
+            width={1536}
+            height={1024}
+            className="h-8 w-auto md:h-9"
+          />
         </a>
+
         <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
           {links.map((l) => (
             <a key={l.href} href={l.href} className="transition-colors hover:text-foreground">

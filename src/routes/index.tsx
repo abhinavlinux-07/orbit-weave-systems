@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
+import tandonLogo from "@/assets/tandon-logo.png";
+
 import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import {
@@ -259,11 +261,17 @@ function Index() {
       <footer id="contact" className="relative border-t section-dark py-20">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 md:grid-cols-4">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full text-base font-bold text-white"
-                style={{ background: "linear-gradient(135deg, var(--brand-deep), var(--brand-accent))" }}>T</span>
-              <span className="font-display text-xl font-semibold">Tandon</span>
+            <div className="rounded-2xl bg-white/95 p-4 inline-block">
+              <img
+                src={tandonLogo}
+                alt="Tandon Electronics"
+                width={1536}
+                height={1024}
+                loading="lazy"
+                className="h-10 w-auto md:h-12"
+              />
             </div>
+
             <p className="mt-4 max-w-md text-sm opacity-70">
               Integrated Telecom, IT &amp; Security infrastructure since 1987. Headquartered in Nagpur, serving enterprises across India.
             </p>
