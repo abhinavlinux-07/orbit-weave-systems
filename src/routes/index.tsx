@@ -261,16 +261,16 @@ function Index() {
       <footer id="contact" className="relative border-t section-dark py-20">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 md:grid-cols-4">
           <div className="md:col-span-2">
-            <div className="rounded-2xl bg-white/95 p-4 inline-block">
+            <div className="flex items-center gap-3">
               <img
                 src={tandonLogo}
                 alt="Tandon Electronics"
-                width={1536}
-                height={1024}
                 loading="lazy"
-                className="h-10 w-auto md:h-12"
+                className="h-12 w-12 rounded-xl object-cover"
               />
+              <span className="font-display text-xl font-semibold">Tandon Electronics</span>
             </div>
+
 
             <p className="mt-4 max-w-md text-sm opacity-70">
               Integrated Telecom, IT &amp; Security infrastructure since 1987. Headquartered in Nagpur, serving enterprises across India.
