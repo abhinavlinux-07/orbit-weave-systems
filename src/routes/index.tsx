@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";
+import tandonLogo from "@/assets/tandon-logo.png";
+
 import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import {
