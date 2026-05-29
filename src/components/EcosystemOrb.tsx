@@ -1,4 +1,6 @@
 import { motion, useTransform, type MotionValue } from "framer-motion";
+import tandonLogo from "@/assets/tandon-logo.png";
+
 import {
   Phone, Server, Camera, Network, Video, Cpu, Wifi, ShieldCheck,
   Radio, MonitorSpeaker, Database, Cable,
