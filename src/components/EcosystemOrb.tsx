@@ -107,11 +107,14 @@ export function EcosystemOrb({ progress }: Props) {
                 "0 0 80px 10px color-mix(in oklch, var(--brand-accent) 45%, transparent), inset 0 0 60px color-mix(in oklch, var(--brand-deep) 60%, transparent)",
             }}
           />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="font-display text-3xl font-bold tracking-tight text-white md:text-5xl">
-              T
-            </div>
+          <div className="absolute inset-0 flex items-center justify-center p-[18%]">
+            <img
+              src={tandonLogo}
+              alt="Tandon"
+              className="h-full w-full rounded-2xl object-cover shadow-2xl"
+            />
           </div>
+
         </motion.div>
 
         {/* Connection lines */}
