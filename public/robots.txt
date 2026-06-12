@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://tandons.in/sitemap.xml
